@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   table,td,tr,th{
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding:10px;
+        
+    }
+    .tr{
+        font-size: 23px;
+        color: rgb(34, 1, 52);
+    }
+</style>
+<body>
+    <table id="data" class="color">
+        <tr class="tr">
+            <th>id</th>
+            <th>title</th>
+            <th>brand</th>
+            <th>image</th>
+            <th>color</th>
+            <th>description</th>
+            <th>discount</th>
+            <th>model</th>
+            <th>price</th>
+            <th>categery</th>
+    
+
+        </tr>
+
+    </table>
+
+
+    <script>
+        var store=localStorage.getItem("single");
+        var data=JSON.parse(store);
+        console.log(data.id);
+
+        var tableget=document.getElementById("data");
+       
+            var tr_cre=document.createElement("tr");
+            
+
+            var td1=document.createElement("td");
+            td1.textContent=data.id;
+           
+
+           
+            var td2=document.createElement("td");
+            td2.textContent=data.title;
+           
+
+           
+            var td3=document.createElement("td");
+            td3.textContent=data.brand;
+          
+
+           
+
+            var td4=document.createElement("td");
+            var img1=document.createElement("img");
+            img1.setAttribute('src',data.image)
+            td4.appendChild(img1)
+           
+
+            var td5=document.createElement("td");
+            td5.textContent=data.color;
+            var td6=document.createElement("td");
+            td6.textContent=data.description;
+            var td7=document.createElement("td");
+            td7.textContent=data.discount;
+            var td8=document.createElement("td");
+            td8.textContent=data.model;
+            var td9=document.createElement("td");
+            td9.textContent=data.price;
+            var td10=document.createElement("td");
+            td10.textContent=data.category;
+
+            tr_cre.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+            tableget.appendChild(tr_cre)
+           
+    
+         
+    </script> 
+</body>
+</html>
